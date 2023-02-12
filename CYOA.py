@@ -35,3 +35,4 @@ character = Player(name, weight) #Saves the custom character information
 
 os.system('cls')
 inventory(character)
+#test
