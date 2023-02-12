@@ -8,11 +8,10 @@ class Player:
         self.weight = weight
         self.money = 1000.0
         self.BAC = 0.0
-        self.fun = 0
-    
+        self.fun = 0     
     
 def inventory(self):
-    print("Name: ",self.name,"\nWeight: ",self.weight,"\nMoney: $",self.money,"\nBlood Alcohol Content: ",self.BAC)
+    print("Name: ",self.name,"\nWeight: ",self.weight,"\nMoney: $",self.money)
         
 
 #Introduction to the initial game laying out the typical usage of the game to the user
@@ -34,4 +33,5 @@ elif(choice == "2"):
     weight = random.randint(100,300)
 character = Player(name, weight) #Saves the custom character information
 
-#os.system('cls')
+os.system('cls')
+inventory(character)
