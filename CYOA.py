@@ -12,13 +12,15 @@ class Player:
     
 def inventory(self):
     print("Name: ",self.name,"\nWeight: ",self.weight,"\nMoney: $",self.money)
-        
+    
+def noOption():
+    print("\nPlease choose one of the choices given.\n")
 
 #Introduction to the initial game laying out the typical usage of the game to the user
 print("Welcome to our Choose Your Own Vacation Game\nIn our game you'll have the option to choose various choices that'll affect the outcome of your adventure.\n\n")
 choice = input("1) Press '1' and press enter to begin\n")
 while choice != "1":
-    print("you gotta type 1 and only 1 to begin bro\n")
+    noOption()
     choice = input("Press '1' and press enter to begin\n")
 os.system('cls')
 
@@ -26,7 +28,11 @@ os.system('cls')
 print("Character Creator\n")
 name = input("Enter a name: ")
 #Choice for auto-weight or entering your own weight
+choices = ["1", "2"]
 choice = input("\nWould you like to enter a weight of your choice or have us choose for you? (random number 100-300)\n1) I'll Enter a custom weight.\n2) Choose for me.\n")
+while choice not in choices:
+    noOption()
+    choice = input("\nWould you like to enter a weight of your choice or have us choose for you? (random number 100-300)\n1) I'll Enter a custom weight.\n2) Choose for me.\n")
 if(choice == "1"):
     weight = int(input("Enter your custom weight: "))
 elif(choice == "2"):
@@ -34,5 +40,4 @@ elif(choice == "2"):
 character = Player(name, weight) #Saves the custom character information
 
 os.system('cls')
-inventory(character)
-#test
+print("dialogue about your plane landing and you now being in the airport...\n\n1) Pick up your luggage and leave the airport.\n2) Leave your luggage behind and leave the airport.")
