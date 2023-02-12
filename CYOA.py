@@ -7,4 +7,3 @@ if user_input == "1":
     print("Prelude:")
 elif user_input != "1":
     print("you gotta type 1 and only 1 to begin bro")
-os.system('cls')
