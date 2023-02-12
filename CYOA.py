@@ -117,12 +117,14 @@ if (choice == "2"):
            # Decision 5
            choice = input("\n1) Margarita ($15)\n2) Pina Colada ($20)\n")
            if (choice == "1"):
+               # Calculates BAC and updates player stats
                character.BAC = 7.16 * martini / character.weight
                character.money = character.money - 15
                print('Your BAC is', format(character.BAC,'.3f'))
                print("\nAfter your margarita you feel out of it and head to bed and sleep until the next day")
                # End of this path and continues at Day 2
            if (choice == "2"):
+               # Calculates BAC and updates player stats
                character.BAC = 7.16 * pina / character.weight
                character.money = character.money - 20
                print('Your BAC is', format(character.BAC,'.3f'))
@@ -137,6 +139,7 @@ if (choice == "2"):
    if (choice == "2"):
        print("you decide to go surfing ($80)\n")
        character.money = character.money - 80
+       # 25% to die to shark
        num = random.randint(1, 4)
        if (num == 2):
            print("SHARK ATTACK!\nYOU DIED, Death did you a favor, CONTINUE ON DAY 2")
@@ -155,6 +158,7 @@ if (choice == "3"):
    choices = ["1", "2"]
    choice = input("\n1) Go gambling\n2) Go for a drink at the bar\n")
    if (choice == "1"):
+       # Slots minigame
        print("\nYou go to a gambling minigame\n")
        ITEMS = ["CHERRY", "PLUM", "BAR"]
        firstWheel = None
@@ -184,6 +188,7 @@ if (choice == "3"):
        def spinWheel():
            randomNumber = random.randint(0, 2)
            return ITEMS[randomNumber]
+       # Displays results of slots
        def printScore():
            global stake, firstWheel, secondWheel, thirdWheel
            if ((firstWheel == "CHERRY") and (secondWheel == "CHERRY") and (thirdWheel != "CHERRY")):
@@ -259,6 +264,7 @@ if (choice == "2"):
        if (choice == "2"):
            print(
                "\nThe Pirates threaten you and force you to help them find some treasure, find it or suffer the consequences!\n")
+           # Treasure hunt minigame (mini mindsweep type game)
            from random import randint
            Hidden_Treasure = [[' '] * 3 for x in range(3)]
            Guess_Treasure = [[' '] * 3 for x in range(3)]
@@ -269,6 +275,7 @@ if (choice == "2"):
                for row in board:
                    print("%d^%s^" % (row_num, "^".join(row)))
                    row_num += 1
+           # Program chooses location to hide treasure
            def Treasure_location():
                row = input('Enter a row 1-3 ').upper()
                while row not in '123':
@@ -294,6 +301,7 @@ if (choice == "2"):
                return count
            create_Treasure(Hidden_Treasure)
            turns = 4
+           # Text for the minigame
            while turns > 0:
                print('Find the buried treasure lad')
                print_board(Guess_Treasure)
@@ -316,8 +324,6 @@ if (choice == "2"):
                    print('Dead men tell no tales ')
                    print('The Pirates shoot you out of a cannon onto shore, you stumble toward the bar.')
                    break
-           # if you lose, thats the end of the whole game cause you die
-           # if you win, you get another fun point and go home and the game ends
    if (choice == "2"):
        print("\nYou decide to go to the bar to buy a drink")
        time.sleep(3)
