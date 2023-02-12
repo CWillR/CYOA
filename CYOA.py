@@ -78,7 +78,7 @@ while choice not in choices:
 if (choice == "1"):
    print("you remember to get your luggage")
 if (choice == "2"):
-   print("you forgot your luggage")
+   print("you forgot your luggage so you now have nothing to wear")
    character.luggage = 0
 time.sleep(3)
 os.system('cls')
