@@ -35,4 +35,3 @@ elif(choice == "2"):
 character = Player(name, weight) #Saves the custom character information
 
 #os.system('cls')
-#test
